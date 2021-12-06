@@ -10,13 +10,17 @@
 		05181EAF275D7EF700BD5BB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05181EAE275D7EF700BD5BB5 /* CloudKit.framework */; };
 		05181EB1275D7F4900BD5BB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05181EB0275D7F4900BD5BB5 /* User.swift */; };
 		05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05181EB4275DB3D500BD5BB5 /* Strings.swift */; };
+		052FCD75275E724000530E4C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052FCD74275E724000530E4C /* Colors.xcassets */; };
+		052FCD79275E7A0D00530E4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD78275E7A0D00530E4C /* LoginViewController.swift */; };
+		052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */; };
 		0566091F2756D5E100FF845A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566091E2756D5E100FF845A /* AppDelegate.swift */; };
 		056609212756D5E100FF845A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056609202756D5E100FF845A /* SceneDelegate.swift */; };
-		056609232756D5E200FF845A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056609222756D5E200FF845A /* ViewController.swift */; };
 		056609262756D5E200FF845A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056609242756D5E200FF845A /* Main.storyboard */; };
 		056609282756D5F400FF845A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056609272756D5F400FF845A /* Assets.xcassets */; };
 		0566092B2756D5F400FF845A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056609292756D5F400FF845A /* LaunchScreen.storyboard */; };
 		0566093A2756D79900FF845A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056609392756D79900FF845A /* City.swift */; };
+		05A74C24275DBCDE0029A990 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A74C23275DBCDE0029A990 /* UserController.swift */; };
+		05A74C29275DC4440029A990 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A74C28275DC4440029A990 /* CloudKitManager.swift */; };
 		05C0C8832757CFF200DF8675 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C0C8822757CFF200DF8675 /* Category.swift */; };
 		05C0C8862757D0BF00DF8675 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C0C8852757D0BF00DF8675 /* Activity.swift */; };
 /* End PBXBuildFile section */
@@ -26,15 +30,19 @@
 		05181EAE275D7EF700BD5BB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		05181EB0275D7F4900BD5BB5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		05181EB4275DB3D500BD5BB5 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		052FCD74275E724000530E4C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		052FCD78275E7A0D00530E4C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorExtension.swift; sourceTree = "<group>"; };
 		0566091B2756D5E100FF845A /* Expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0566091E2756D5E100FF845A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056609202756D5E100FF845A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		056609222756D5E200FF845A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		056609252756D5E200FF845A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		056609272756D5F400FF845A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0566092A2756D5F400FF845A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0566092C2756D5F400FF845A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		056609392756D79900FF845A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		05A74C23275DBCDE0029A990 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		05A74C28275DC4440029A990 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		05C0C8822757CFF200DF8675 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		05C0C8852757D0BF00DF8675 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,9 +89,10 @@
 			children = (
 				05181EAC275D7EE700BD5BB5 /* Expedition.entitlements */,
 				056609382756D77000FF845A /* Model */,
-				056609332756D67500FF845A /* Resources */,
-				056609372756D6C100FF845A /* Controllers */,
 				056609352756D69500FF845A /* Views */,
+				056609372756D6C100FF845A /* Controllers */,
+				056609332756D67500FF845A /* Resources */,
+				05A74C26275DC39A0029A990 /* Extensions + Helpers */,
 			);
 			path = Expedition;
 			sourceTree = "<group>";
@@ -93,9 +102,9 @@
 			children = (
 				0566091E2756D5E100FF845A /* AppDelegate.swift */,
 				056609202756D5E100FF845A /* SceneDelegate.swift */,
-				056609272756D5F400FF845A /* Assets.xcassets */,
 				0566092C2756D5F400FF845A /* Info.plist */,
-				05181EB4275DB3D500BD5BB5 /* Strings.swift */,
+				056609272756D5F400FF845A /* Assets.xcassets */,
+				052FCD74275E724000530E4C /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -120,7 +129,7 @@
 		056609372756D6C100FF845A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				056609222756D5E200FF845A /* ViewController.swift */,
+				052FCD78275E7A0D00530E4C /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,12 +137,31 @@
 		056609382756D77000FF845A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				05A74C22275DBCA70029A990 /* Model Controllers */,
 				056609392756D79900FF845A /* City.swift */,
 				05C0C8822757CFF200DF8675 /* Category.swift */,
 				05C0C8852757D0BF00DF8675 /* Activity.swift */,
 				05181EB0275D7F4900BD5BB5 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		05A74C22275DBCA70029A990 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05A74C23275DBCDE0029A990 /* UserController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		05A74C26275DC39A0029A990 /* Extensions + Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				05A74C28275DC4440029A990 /* CloudKitManager.swift */,
+				05181EB4275DB3D500BD5BB5 /* Strings.swift */,
+				052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */,
+			);
+			path = "Extensions + Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0566092B2756D5F400FF845A /* LaunchScreen.storyboard in Resources */,
+				052FCD75275E724000530E4C /* Colors.xcassets in Resources */,
 				056609282756D5F400FF845A /* Assets.xcassets in Resources */,
 				056609262756D5E200FF845A /* Main.storyboard in Resources */,
 			);
@@ -206,13 +235,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A74C24275DBCDE0029A990 /* UserController.swift in Sources */,
 				05C0C8862757D0BF00DF8675 /* Activity.swift in Sources */,
-				056609232756D5E200FF845A /* ViewController.swift in Sources */,
 				05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */,
+				05A74C29275DC4440029A990 /* CloudKitManager.swift in Sources */,
 				05C0C8832757CFF200DF8675 /* Category.swift in Sources */,
 				0566091F2756D5E100FF845A /* AppDelegate.swift in Sources */,
 				0566093A2756D79900FF845A /* City.swift in Sources */,
+				052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */,
 				056609212756D5E100FF845A /* SceneDelegate.swift in Sources */,
+				052FCD79275E7A0D00530E4C /* LoginViewController.swift in Sources */,
 				05181EB1275D7F4900BD5BB5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
