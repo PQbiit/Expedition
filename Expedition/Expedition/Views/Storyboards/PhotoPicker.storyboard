@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wIS-Lu-9fw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Picker View Controller-->
+        <scene sceneID="pBF-o9-Nm5">
+            <objects>
+                <viewController id="wIS-Lu-9fw" customClass="PhotoPickerViewController" customModule="Expedition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfD-Cc-pha">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LbM-Hk-Ug1">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbe-Rq-MXY">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhotoButtonTapped:" destination="wIS-Lu-9fw" eventType="touchUpInside" id="yaT-Mj-zBn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TjF-GF-x2l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LbM-Hk-Ug1" firstAttribute="top" secondItem="jfD-Cc-pha" secondAttribute="top" id="48R-Ms-YLw"/>
+                            <constraint firstAttribute="trailing" secondItem="tbe-Rq-MXY" secondAttribute="trailing" id="6CX-nC-CMO"/>
+                            <constraint firstItem="tbe-Rq-MXY" firstAttribute="leading" secondItem="jfD-Cc-pha" secondAttribute="leading" id="9oh-ka-X9x"/>
+                            <constraint firstAttribute="bottom" secondItem="tbe-Rq-MXY" secondAttribute="bottom" id="HpE-dL-mBO"/>
+                            <constraint firstAttribute="trailing" secondItem="LbM-Hk-Ug1" secondAttribute="trailing" id="eAU-79-c26"/>
+                            <constraint firstAttribute="bottom" secondItem="LbM-Hk-Ug1" secondAttribute="bottom" id="ii8-Wu-Ixs"/>
+                            <constraint firstItem="tbe-Rq-MXY" firstAttribute="top" secondItem="jfD-Cc-pha" secondAttribute="top" id="jBV-Bu-xPw"/>
+                            <constraint firstItem="LbM-Hk-Ug1" firstAttribute="leading" secondItem="jfD-Cc-pha" secondAttribute="leading" id="xBv-ic-uqK"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="400" height="400"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="LbM-Hk-Ug1" id="Zwm-8G-tZy"/>
+                        <outlet property="selectPhotoButton" destination="tbe-Rq-MXY" id="9Ff-8t-DFk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YkE-8e-GQk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-481.15942028985512" y="-206.25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

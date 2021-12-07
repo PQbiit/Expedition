@@ -15,29 +15,37 @@ class UserController {
     
     //MARK: - CRUD
     
-    func createUserWith(firstName: String, middleName: String, lastName: String, email: String, profilePhoto: UIImage?) {
+    func createUserWith(firstName: String, middleName: String, lastName: String, email: String, password: String, profilePhoto: UIImage?, completion: @escaping (Bool) -> Void) {
         
-        CloudKitManager.shared.fetchAppleUserReference { [weak self] (reference) in
-            guard let reference = reference else { return }
-            let newUser = User(firstName: firstName, middleName: middleName, lastName: lastName, email: email, profilePhoto: profilePhoto, appleUserReference: reference)
+        //TODO: - ENCRYPT PASSWORD
+        
+        CloudKitManager.shared.fetchAppleUserReference { (appleReference) in
+            guard let appleReference = appleReference else {print("Error fetching the icloud refrence") ; return completion(false)}
+            
+            let newUser = User(firstName: firstName, middleName: middleName, lastName: lastName, email: email, password: password, profilePhoto: profilePhoto, appleUserReference: appleReference)
+            
             let newUserRecord = CKRecord(user: newUser)
-            CloudKitManager.shared.saveNewUser(userRecord: newUserRecord) { (userRecord, error) in
-                if let error = error {
+            
+            CloudKitManager.shared.publicDB.save(newUserRecord) { (record, error) in
+                if let error = error{
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n\(error)")
+                    return completion(false)
                 }
                 
-                guard let userRecord = userRecord,
-                      let savedUser = User(ckRecord: userRecord)
-                else { return }
-                self?.currentUser = savedUser
+                guard let record = record,
+                      let savedUser = User(ckRecord: record)
+                      else { return completion(false) }
+                
+                self.currentUser = savedUser
+                print("New user successfully created and saved to iCloud")
+                completion(true)
             }
         }
-        
         
     }
     
     func fetchUser(completion: @escaping (CKRecord?)->Void) {
-        CloudKitManager.shared.fetchUser { (records, error) in
+        CloudKitManager.shared.fetchUserFromCloud { (records, error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n\(error)")
                 return completion(nil)

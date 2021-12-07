@@ -34,12 +34,12 @@ class CloudKitManager {
         self.publicDB.save(userRecord, completionHandler: completion)
     }
     
-    func fetchUser(completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
-        fetchAppleUserReference { [weak self] (reference) in
-            guard let reference = reference else {
+    func fetchUserFromCloud(completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
+        fetchAppleUserReference { [weak self] (appleReference) in
+            guard let appleReference = appleReference else {
                 return completion(nil,nil)
             }
-            let predicate = NSPredicate(format: "%K == %@", argumentArray: [Strings.userRecordTypeKey, reference])
+            let predicate = NSPredicate(format: "%K == %@", argumentArray: [Strings.appleUserReferenceKey, appleReference])
             let query = CKQuery(recordType: Strings.userRecordTypeKey, predicate: predicate)
             self?.publicDB.perform(query, inZoneWith: nil, completionHandler: completion)
         }

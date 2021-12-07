@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

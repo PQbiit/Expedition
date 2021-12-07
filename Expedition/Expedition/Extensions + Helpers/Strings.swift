@@ -14,6 +14,10 @@ struct Strings {
     static let mNameKey = "middleName"
     static let lNameKey = "lastName"
     static let emailKey = "email"
+    static let passwordKey = "password"
     static let profilePhotoAssetKey = "profilePhotoAsset"
     static let appleUserReferenceKey = "appleUserReference"
+    
+    //MARK: - General Constants
+    static let photoPickerVCSegueID = "photoPickerVC"
 }

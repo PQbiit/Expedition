@@ -10,6 +10,9 @@
 		05181EAF275D7EF700BD5BB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05181EAE275D7EF700BD5BB5 /* CloudKit.framework */; };
 		05181EB1275D7F4900BD5BB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05181EB0275D7F4900BD5BB5 /* User.swift */; };
 		05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05181EB4275DB3D500BD5BB5 /* Strings.swift */; };
+		051A77ED275E9E5A00445FEB /* PhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */; };
+		051A77F0275EA09700445FEB /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */; };
+		051A77F3275EC6F000445FEB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A77F2275EC6F000445FEB /* TestViewController.swift */; };
 		052FCD75275E724000530E4C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052FCD74275E724000530E4C /* Colors.xcassets */; };
 		052FCD79275E7A0D00530E4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD78275E7A0D00530E4C /* LoginViewController.swift */; };
 		052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */; };
@@ -30,6 +33,9 @@
 		05181EAE275D7EF700BD5BB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		05181EB0275D7F4900BD5BB5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		05181EB4275DB3D500BD5BB5 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoPicker.storyboard; sourceTree = "<group>"; };
+		051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		051A77F2275EC6F000445FEB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		052FCD74275E724000530E4C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		052FCD78275E7A0D00530E4C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorExtension.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				056609242756D5E200FF845A /* Main.storyboard */,
+				051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -130,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				052FCD78275E7A0D00530E4C /* LoginViewController.swift */,
+				051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */,
+				051A77F2275EC6F000445FEB /* TestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0566092B2756D5F400FF845A /* LaunchScreen.storyboard in Resources */,
+				051A77ED275E9E5A00445FEB /* PhotoPicker.storyboard in Resources */,
 				052FCD75275E724000530E4C /* Colors.xcassets in Resources */,
 				056609282756D5F400FF845A /* Assets.xcassets in Resources */,
 				056609262756D5E200FF845A /* Main.storyboard in Resources */,
@@ -240,6 +250,8 @@
 				05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */,
 				05A74C29275DC4440029A990 /* CloudKitManager.swift in Sources */,
 				05C0C8832757CFF200DF8675 /* Category.swift in Sources */,
+				051A77F3275EC6F000445FEB /* TestViewController.swift in Sources */,
+				051A77F0275EA09700445FEB /* PhotoPickerViewController.swift in Sources */,
 				0566091F2756D5E100FF845A /* AppDelegate.swift in Sources */,
 				0566093A2756D79900FF845A /* City.swift in Sources */,
 				052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */,
