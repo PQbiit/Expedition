@@ -79,6 +79,22 @@ class LoginViewController: UIViewController {
         })
     }
     
+    func presentTestView() {
+        DispatchQueue.main.async {
+            let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testViewController") as! TestViewController
+            
+            detailsVC.name = UserController.shared.currentUser?.firstName
+            detailsVC.email = UserController.shared.currentUser?.email
+            detailsVC.password = UserController.shared.currentUser?.password
+            detailsVC.photo = UserController.shared.currentUser?.profilePhoto
+            
+            detailsVC.isModalInPresentation = true
+            detailsVC.modalPresentationStyle = .formSheet
+            
+            self.present(detailsVC, animated: true, completion: nil)
+        }
+    }
+    
     //MARK: - IBActions
     
     @IBAction func loginFormButtonTapped(_ sender: Any) {
@@ -94,23 +110,16 @@ class LoginViewController: UIViewController {
             //Register new user
             registerNewUser { [weak self] (success) in
                 if success {
-                    DispatchQueue.main.async {
-                        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testViewController") as! TestViewController
-                        
-                        detailsVC.name = UserController.shared.currentUser?.firstName
-                        detailsVC.email = UserController.shared.currentUser?.email
-                        detailsVC.password = UserController.shared.currentUser?.password
-                        detailsVC.photo = UserController.shared.currentUser?.profilePhoto
-                        
-                        detailsVC.isModalInPresentation = true
-                        detailsVC.modalPresentationStyle = .formSheet
-                        
-                        self?.present(detailsVC, animated: true, completion: nil)
-                    }
+                    self?.presentTestView()
                 }
             }
         }else{
             //Log in user
+            loginUser { [weak self] (success) in
+                if success{
+                    self?.presentTestView()
+                }
+            }
         }
     }
     
@@ -157,6 +166,26 @@ class LoginViewController: UIViewController {
         
     }
     
+    func loginUser(completion: @escaping (Bool) -> Void) {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text
+        else { return completion(false) }
+        
+        CloudKitManager.shared.validateUserCredentials(email: email, password: password) { (userRecord, error) in
+            if let error = error {
+                print("ERROR WHILE VALIDATING ACCOUNT DETAILS")
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n\(error)")
+                return completion(false)
+            }
+            
+            guard let userRecord = userRecord,
+                  let currentUser = User(ckRecord: userRecord)
+                  else {return completion(false)}
+            
+            UserController.shared.currentUser = currentUser
+            return completion(true)
+        }
+    }
     
     // MARK: - Navigation
 

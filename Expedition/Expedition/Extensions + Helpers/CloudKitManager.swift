@@ -45,4 +45,40 @@ class CloudKitManager {
         }
     }
     
+    func validateUserCredentials(email: String, password: String, completion: @escaping (_ accountRecord: CKRecord?, _ error: Error?) -> Void) {
+        
+        let emailMatchPredicate = NSPredicate(format: "%K == %@", argumentArray: [Strings.emailKey, email])
+        let passwordMarchPredicate = NSPredicate(format: "%K == %@", argumentArray: [Strings.passwordKey,password])
+        
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [emailMatchPredicate,passwordMarchPredicate])
+        
+        let query = CKQuery(recordType: Strings.userRecordTypeKey, predicate: compoundPredicate)
+        self.publicDB.perform(query, inZoneWith: nil) { [weak self] (userRecords, error) in
+            if let error = error{
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n\(error)")
+                return
+            }
+            
+            guard let userRecords = userRecords,
+                  let matchUserRecord = userRecords.first
+                  else {return}
+            self?.validateAccountOwnership(userRecord: matchUserRecord, completion: completion)
+        }
+    }
+    
+    func validateAccountOwnership(userRecord: CKRecord, completion: @escaping (_ accountRecord: CKRecord?, _ error: Error?) -> Void) {
+        fetchAppleUserReference { (appleReference) in
+            guard let appleReference = appleReference,
+                  let recordAppleReference = userRecord[Strings.appleUserReferenceKey] as? CKRecord.Reference
+                  else {return completion(nil,nil) }
+            
+            if recordAppleReference == appleReference {
+                return completion(userRecord,nil)
+            }else{
+                print("You are not logged in to icloud from you phone!")
+                return completion(nil,nil)
+            }
+        }
+    }
+    
 }
