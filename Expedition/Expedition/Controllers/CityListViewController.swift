@@ -15,7 +15,7 @@ class CityListViewController: UIViewController {
     @IBOutlet weak var cityCollectionView: UICollectionView!
     
     //MARK: - Attributes
-    
+    var cities: [City] = []
     
     //MARK: - Life cycle Methods
     
@@ -24,10 +24,24 @@ class CityListViewController: UIViewController {
         cityCollectionView.delegate = self
         cityCollectionView.dataSource = self
         cityCollectionView.register((UINib(nibName: "CityCollectionViewCell", bundle: nil)), forCellWithReuseIdentifier: "cityCell")
+        fetchAvailableCities()
     }
-    
+
     //MARK: - Helper Methods
     
+    func fetchAvailableCities() {
+        CityController.shared.fetchCities { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let cities):
+                    self?.cities = cities
+                    self?.cityCollectionView.reloadData()
+                case .failure(let error):
+                    self?.presentErrorAlert(error: error)
+                }
+            }
+        }
+    }
     
     
     // MARK: - Navigation
@@ -39,14 +53,17 @@ class CityListViewController: UIViewController {
 }
 
 //MARK: - CollectionView Data Source & Delegate Methods
+
 extension CityListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return cities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath) as? CityCollectionViewCell else { return UICollectionViewCell()}
+        let city = cities[indexPath.row]
+        cell.city = city
         return cell
         
     }

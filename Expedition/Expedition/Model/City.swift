@@ -10,7 +10,7 @@ import Foundation
 struct City: Codable{
     let id: Int
     let name: String
-    let description: String
+    let description: String?
     let latitude: Double
     let longitude: Double
     let coverImageURL: String
