@@ -43,7 +43,6 @@ class CityListViewController: UIViewController {
         }
     }
     
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,6 +65,17 @@ extension CityListViewController: UICollectionViewDelegate, UICollectionViewData
         cell.city = city
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CityCollectionViewCell,
+              let city = cell.city,
+              let coverPhoto = cell.coverPhoto
+              else { return }
+        let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "cityDetailsVC") as CityDetailViewController
+        destinationVC.city = city
+        destinationVC.coverPhoto = coverPhoto
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
 
 }

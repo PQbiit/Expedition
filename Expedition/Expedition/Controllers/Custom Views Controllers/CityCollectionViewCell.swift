@@ -21,6 +21,7 @@ class CityCollectionViewCell: UICollectionViewCell {
             setupViews()
         }
     }
+    var coverPhoto: UIImage?
 
     //MARK: - Helper Methods
     
@@ -38,6 +39,7 @@ class CityCollectionViewCell: UICollectionViewCell {
             DispatchQueue.main.async {
                 self?.cityNameLbl.text = "\(city.name), \(city.country.name)"
                 if coverPhoto != nil{
+                    self?.coverPhoto = coverPhoto
                     self?.cityBackgroundImage.image = coverPhoto
                 }
             }
