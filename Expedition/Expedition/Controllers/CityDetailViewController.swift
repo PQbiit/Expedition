@@ -20,7 +20,9 @@ class CityDetailViewController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-  
+    @IBOutlet weak var showActivitiesButtonContainer: UIView!
+    @IBOutlet weak var showActivitiesButton: UIButton!
+    
     //MARK: - Attributes
     
     var city: City?
@@ -31,6 +33,7 @@ class CityDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        tabBarController?.tabBar.isHidden = true
     }
     
     //MARK: - Helper Methods
@@ -44,6 +47,7 @@ class CityDetailViewController: UIViewController {
         bookmarkBlurView.clipsToBounds = true
         bookmarkButton.layer.cornerRadius = bookmarkButton.frame.height / 2
         backButton.layer.cornerRadius = backButton.frame.height / 2
+        showActivitiesButtonContainer.layer.cornerRadius = showActivitiesButtonContainer.frame.height / 2
         
         guard let city = city,
               let coverPhoto = coverPhoto
@@ -51,6 +55,7 @@ class CityDetailViewController: UIViewController {
         cityCoverImageView.image = coverPhoto
         titleLbl.text = "\(city.name), \(city.country.name)"
         descriptionLbl.text = city.description
+        showActivitiesButton.setTitle("Explore activities in \(city.name)", for: .normal)
     }
 
     //MARK: - IBActions
@@ -59,6 +64,14 @@ class CityDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func showActivitiesButtonTapped(_ sender: Any) {
+        let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "activitiesListVC") as ActivityListViewController
+        guard let city = city else { return }
+        
+        destinationVC.cityID = String(city.id)
+        destinationVC.cityName = city.name
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
     
     
 }

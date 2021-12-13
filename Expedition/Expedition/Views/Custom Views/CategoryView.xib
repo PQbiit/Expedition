@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryView" customModule="Expedition" customModuleProvider="target">
+            <connections>
+                <outlet property="blurEffectView" destination="crU-RP-jPU" id="Hr5-Ac-Zj9"/>
+                <outlet property="categoryNameLbl" destination="rJF-bx-Fre" id="qLX-py-vUS"/>
+                <outlet property="iconImageView" destination="9wH-XR-N5i" id="gGh-bE-3xX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJF-bx-Fre">
+                    <rect key="frame" x="22" y="80" width="56" height="16"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crU-RP-jPU">
+                    <rect key="frame" x="20" y="10" width="60" height="60"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WZc-H2-Kn4">
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-XR-N5i">
+                                <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                <color key="tintColor" name="Imperial Red"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9wH-XR-N5i" firstAttribute="top" secondItem="WZc-H2-Kn4" secondAttribute="top" constant="10" id="Qez-gY-OdD"/>
+                            <constraint firstItem="9wH-XR-N5i" firstAttribute="leading" secondItem="WZc-H2-Kn4" secondAttribute="leading" constant="10" id="TKz-BG-VH1"/>
+                            <constraint firstAttribute="bottom" secondItem="9wH-XR-N5i" secondAttribute="bottom" constant="10" id="cc9-hJ-aim"/>
+                            <constraint firstAttribute="trailing" secondItem="9wH-XR-N5i" secondAttribute="trailing" constant="10" id="mRk-Vj-qXY"/>
+                        </constraints>
+                    </view>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <blurEffect style="prominent"/>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rJF-bx-Fre" secondAttribute="bottom" constant="4" id="Asg-Td-oZn"/>
+                <constraint firstItem="crU-RP-jPU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="UVg-Fk-RDO"/>
+                <constraint firstItem="rJF-bx-Fre" firstAttribute="top" secondItem="crU-RP-jPU" secondAttribute="bottom" constant="10" id="WrS-Ve-A4O"/>
+                <constraint firstItem="rJF-bx-Fre" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="YHM-c0-8OO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="crU-RP-jPU" secondAttribute="trailing" constant="20" id="fgo-Tf-fg7"/>
+                <constraint firstItem="crU-RP-jPU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="uGa-e8-Uyo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-81.159420289855078" y="-128.57142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Imperial Red">
+            <color red="0.93725490196078431" green="0.13725490196078433" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
