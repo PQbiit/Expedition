@@ -20,4 +20,5 @@ struct Strings {
     
     //MARK: - General Constants
     static let photoPickerVCSegueID = "photoPickerVC"
+    static let allIcon = "square.text.square.fill"
 }

@@ -5,7 +5,7 @@
 //  Created by Luis Alfonso Arriaga Quezada on 01/12/21.
 //
 
-import Foundation
+import UIKit
 
 struct CityAtivities: Codable{
     let activities: [Activity]
@@ -17,24 +17,30 @@ struct CityAtivities: Codable{
 struct Activity: Codable {
     let id: String
     let title: String
-    let description: String
+    let description: String?
     let about: String
     let coverImageURL: String
-    let latitude: Double
-    let longitude: Double
+    let latitude: Double?
+    let longitude: Double?
     let musementURL: String
     let categories: [Category]
     let retailPrice: RetailPrice
     let serviceFee: ServiceFee
+    let duration: Duration?
+    let rating: Double
     
     struct RetailPrice: Codable {
         let currency: String
-        let value: Int
+        let value: Double
     }
 
     struct ServiceFee: Codable {
         let currency: String
-        let value: Int
+        let value: Double
+    }
+    
+    struct Duration: Codable {
+        let max: String
     }
     
     enum CodingKeys: String, CodingKey {
@@ -49,17 +55,15 @@ struct Activity: Codable {
         case categories = "verticals"
         case retailPrice = "retail_price"
         case serviceFee = "service_fee"
+        case rating = "reviews_avg"
+        case duration = "duration_range"
     }
+    
+    var coverImage: UIImage?
     
 }
 
 struct ActivityMedia: Codable {
     let type: String
-    let imageURL: String
-    
-    enum codingKeys: String, CodingKey {
-        case type
-        case imageURL = "url"
-    }
-    
+    let url: String
 }

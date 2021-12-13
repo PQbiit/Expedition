@@ -26,6 +26,11 @@ class CityListViewController: UIViewController {
         cityCollectionView.register((UINib(nibName: "CityCollectionViewCell", bundle: nil)), forCellWithReuseIdentifier: "cityCell")
         fetchAvailableCities()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 
     //MARK: - Helper Methods
     
