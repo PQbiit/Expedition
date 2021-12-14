@@ -17,6 +17,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if let loggedUserEmail = UserDefaults.standard.string(forKey: Strings.UDSavedUserEmailKey) {
+            
+            let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Strings.mainTabBarController)
+            window?.rootViewController = mainTabBarController
+            UserController.shared.fetchUser { [weak self] (userRecord) in
+                guard let userRecord = userRecord,
+                      let fetchedUser = User(ckRecord: userRecord)
+                      else { return }
+                if fetchedUser.email == loggedUserEmail {
+                    UserController.shared.currentUser = fetchedUser
+                }else{
+                    let authNavViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(identifier: Strings.authNavigationController)
+                    self?.window?.rootViewController = authNavViewController
+                }
+            }
+            
+        }else{
+            let authNavViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(identifier: Strings.authNavigationController)
+            window?.rootViewController = authNavViewController
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,3 +72,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    
+    func changeRootViewController(_ viewController: UIViewController, animated: Bool = true) {
+        guard let window = self.window else { return }
+        window.rootViewController = viewController
+        UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: nil, completion: nil)
+    }
+    
+}

@@ -21,4 +21,7 @@ struct Strings {
     //MARK: - General Constants
     static let photoPickerVCSegueID = "photoPickerVC"
     static let allIcon = "square.text.square.fill"
+    static let authNavigationController = "authenticationNavigationController"
+    static let mainTabBarController = "mainTabBarController"
+    static let UDSavedUserEmailKey = "userEmail"
 }

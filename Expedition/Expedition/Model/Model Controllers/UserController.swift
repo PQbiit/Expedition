@@ -36,6 +36,7 @@ class UserController {
                       let savedUser = User(ckRecord: record)
                       else { return completion(false) }
                 
+                UserDefaults.standard.setValue(savedUser.email, forKey: Strings.UDSavedUserEmailKey)
                 self.currentUser = savedUser
                 print("New user successfully created and saved to iCloud")
                 completion(true)

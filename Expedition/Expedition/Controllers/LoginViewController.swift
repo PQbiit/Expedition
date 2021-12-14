@@ -79,19 +79,10 @@ class LoginViewController: UIViewController {
         })
     }
     
-    func presentTestView() {
+    func presentExploreViewController() {
         DispatchQueue.main.async {
-            let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testViewController") as! TestViewController
-            
-            detailsVC.name = UserController.shared.currentUser?.firstName
-            detailsVC.email = UserController.shared.currentUser?.email
-            detailsVC.password = UserController.shared.currentUser?.password
-            detailsVC.photo = UserController.shared.currentUser?.profilePhoto
-            
-            detailsVC.isModalInPresentation = true
-            detailsVC.modalPresentationStyle = .formSheet
-            
-            self.present(detailsVC, animated: true, completion: nil)
+            guard let exploreVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else { return }
+            self.present(exploreVC, animated: true, completion: nil)
         }
     }
     
@@ -108,16 +99,22 @@ class LoginViewController: UIViewController {
     @IBAction func actionButtonTapped(_ sender: Any) {
         if status {
             //Register new user
-            registerNewUser { [weak self] (success) in
+            registerNewUser { (success) in
                 if success {
-                    self?.presentTestView()
+                    DispatchQueue.main.async {
+                        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Strings.mainTabBarController)
+                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                    }
                 }
             }
         }else{
             //Log in user
-            loginUser { [weak self] (success) in
+            loginUser { (success) in
                 if success{
-                    self?.presentTestView()
+                    DispatchQueue.main.async {
+                        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Strings.mainTabBarController)
+                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                    }
                 }
             }
         }
@@ -181,7 +178,7 @@ class LoginViewController: UIViewController {
             guard let userRecord = userRecord,
                   let currentUser = User(ckRecord: userRecord)
                   else {return completion(false)}
-            
+            UserDefaults.standard.setValue(currentUser.email, forKey: Strings.UDSavedUserEmailKey)
             UserController.shared.currentUser = currentUser
             return completion(true)
         }

@@ -23,7 +23,6 @@
 		05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05181EB4275DB3D500BD5BB5 /* Strings.swift */; };
 		051A77ED275E9E5A00445FEB /* PhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */; };
 		051A77F0275EA09700445FEB /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */; };
-		051A77F3275EC6F000445FEB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A77F2275EC6F000445FEB /* TestViewController.swift */; };
 		052FCD75275E724000530E4C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052FCD74275E724000530E4C /* Colors.xcassets */; };
 		052FCD79275E7A0D00530E4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD78275E7A0D00530E4C /* LoginViewController.swift */; };
 		052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */; };
@@ -49,6 +48,7 @@
 		05C64E022763EE55001B1E9A /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C64E012763EE55001B1E9A /* ActivityController.swift */; };
 		05C64E052765664D001B1E9A /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C64E042765664D001B1E9A /* ActivityDetailViewController.swift */; };
 		05C64E0C27659D48001B1E9A /* DurationFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C64E0B27659D47001B1E9A /* DurationFormater.swift */; };
+		05DA96542767FB9800C88124 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA96532767FB9800C88124 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,6 @@
 		05181EB4275DB3D500BD5BB5 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoPicker.storyboard; sourceTree = "<group>"; };
 		051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
-		051A77F2275EC6F000445FEB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		052FCD74275E724000530E4C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		052FCD78275E7A0D00530E4C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorExtension.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		05C64E012763EE55001B1E9A /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		05C64E042765664D001B1E9A /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		05C64E0B27659D47001B1E9A /* DurationFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationFormater.swift; sourceTree = "<group>"; };
+		05DA96532767FB9800C88124 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,12 +188,12 @@
 				05921C342761101100FC6EC1 /* Custom Views Controllers */,
 				052FCD78275E7A0D00530E4C /* LoginViewController.swift */,
 				051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */,
-				051A77F2275EC6F000445FEB /* TestViewController.swift */,
 				05921C3E27611F3300FC6EC1 /* CityListViewController.swift */,
 				05921C4F276169E500FC6EC1 /* CityDetailViewController.swift */,
 				05010E9A2762D5B700D2A3A3 /* ActivityListViewController.swift */,
 				05C64E042765664D001B1E9A /* ActivityDetailViewController.swift */,
 				05143D962766B0C90032BBD0 /* PhotoGalleryViewController.swift */,
+				05DA96532767FB9800C88124 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,9 +347,9 @@
 				05143D8E27668E320032BBD0 /* ActivityMapPin.swift in Sources */,
 				05921C50276169E500FC6EC1 /* CityDetailViewController.swift in Sources */,
 				05010EA227631F0400D2A3A3 /* CategoryController.swift in Sources */,
+				05DA96542767FB9800C88124 /* ProfileViewController.swift in Sources */,
 				05C64E052765664D001B1E9A /* ActivityDetailViewController.swift in Sources */,
 				05C0C8832757CFF200DF8675 /* Category.swift in Sources */,
-				051A77F3275EC6F000445FEB /* TestViewController.swift in Sources */,
 				051A77F0275EA09700445FEB /* PhotoPickerViewController.swift in Sources */,
 				05921C38276117A000FC6EC1 /* CityCollectionViewCell.swift in Sources */,
 				05921C3F27611F3300FC6EC1 /* CityListViewController.swift in Sources */,
