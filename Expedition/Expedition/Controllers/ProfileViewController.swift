@@ -10,14 +10,23 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var userProfileImageView: UIImageView!
+    @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var savedActivitiesCountLbl: UILabel!
+    @IBOutlet weak var favoriteCitiesCountLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userProfileImageView.image = UserController.shared.currentUser?.profilePhoto
-        
+        setupViews()
     }
     
-
+    func setupViews() {
+        guard let user = UserController.shared.currentUser else { return }
+        userProfileImageView.image = user.profilePhoto
+        userNameLbl.text = "\(user.firstName) \(user.middleName ?? "") \(user.lastName)"
+        favoriteCitiesCountLbl.text = "99"
+        savedActivitiesCountLbl.text = "99"
+    }
+    
     @IBAction func optionsButtonTapped(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: Strings.UDSavedUserEmailKey)
         UserDefaults.standard.synchronize()
