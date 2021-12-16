@@ -18,9 +18,15 @@ class CityCollectionViewCell: UICollectionViewCell {
     
     var city: City? {
         didSet{
-            setupViews()
+            setupViewsFromCity()
         }
     }
+    var blCity: BLCity? {
+        didSet {
+            setupViewsFromBLCity()
+        }
+    }
+    
     var coverPhoto: UIImage?
 
     //MARK: - Helper Methods
@@ -30,7 +36,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
     }
     
-    func setupViews() {
+    func setupViewsFromCity() {
         setupCellCornerRadius()
 
         guard let city = city else { return }
@@ -45,6 +51,18 @@ class CityCollectionViewCell: UICollectionViewCell {
             }
         }
         
+    }
+    
+    func setupViewsFromBLCity() {
+        setupCellCornerRadius()
+        guard let blCity = blCity,
+              let cityName = blCity.name,
+              let countryName = blCity.countryName
+              else { return }
+        
+        cityNameLbl.text = "\(cityName), \(countryName)"
+        guard let imageData = blCity.coverImageData else { return }
+        cityBackgroundImage.image = UIImage(data: imageData)
     }
     
 }

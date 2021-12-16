@@ -65,11 +65,36 @@ class ActivityController {
     
     //Fetch activities aplying CATEGORY FILTERING
     func fetchActivitiesForCityWithCategory(cityID: String, categoryID: String, paginationOffSet: Int, completion: @escaping () -> Void) {
-        
     }
     
     //Fetch Top 10 activities for city
-    func fetchTop10ActivitiesForCity(cityID: String, completion: @escaping () -> Void) {
+    func fetchTop10ActivitiesForCity(cityID: String, completion: @escaping (Result<[Activity],NetworkError>) -> Void) {
+        guard let baseURL = APIConstants.baseURL?.appendingPathComponent(cityID).appendingPathComponent(APIConstants.activitiesPath) else { return completion(.failure(NetworkError.invalidURL))}
+        
+        let queryItems = [URLQueryItem(name: APIConstants.limitKey, value: "10"),
+                          URLQueryItem(name: APIConstants.sortByKey, value: APIConstants.sortByRatingValue)]
+        
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        components?.queryItems = queryItems
+        
+        guard let finalURL = components?.url else { return completion(.failure(.invalidURL)) }
+        
+        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+            if let error = error {
+                return completion(.failure(.thrownError(error)))
+            }
+            
+            guard let data = data else { return completion(.failure(.noData)) }
+            
+            do{
+                let activitiesData = try JSONDecoder().decode(CityAtivities.self, from: data)
+                let activitiesArr = activitiesData.activities
+                return completion(.success(activitiesArr))
+            } catch {
+                return completion(.failure(.unableToDecode))
+            }
+            
+        }.resume()
         
     }
     

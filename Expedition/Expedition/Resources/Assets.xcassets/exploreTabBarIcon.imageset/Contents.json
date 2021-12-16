@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "thumb_145330_cover_header.jpeg",
+      "filename" : "icon_white 1-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icon_white 1-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icon_white 1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -101,6 +101,7 @@ extension ActivityListViewController: UICollectionViewDelegate, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeActivityCell", for: indexPath) as? ActivityCollectionViewCell else { return UICollectionViewCell() }
         let activity = activities[indexPath.row]
         cell.activity = activity
+        cell.delegate = self
         return cell
     }
     
@@ -129,3 +130,13 @@ extension ActivityListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 //MARK: - Extensions
+
+extension ActivityListViewController: ActivityCollectionViewCellDelegate {
+    func updateBucketListStatus(activity: Activity, favoriteStatus: Bool) {
+        if favoriteStatus {
+            BLActivityController.shared.addToBucketList(activity: activity)
+        }else{
+            BLActivityController.shared.removeFromBucketList(activity: activity)
+        }
+    }
+}

@@ -23,6 +23,14 @@
 		05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05181EB4275DB3D500BD5BB5 /* Strings.swift */; };
 		051A77ED275E9E5A00445FEB /* PhotoPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */; };
 		051A77F0275EA09700445FEB /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */; };
+		051B5495276970D300949A74 /* Expedition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 051B5493276970D300949A74 /* Expedition.xcdatamodeld */; };
+		051B5498276973D200949A74 /* BLCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B5497276973D200949A74 /* BLCity.swift */; };
+		051B549B276974EB00949A74 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B549A276974EB00949A74 /* CoreDataStack.swift */; };
+		051B549E276975FF00949A74 /* BLCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B549D276975FF00949A74 /* BLCityController.swift */; };
+		051B54A12769A2DE00949A74 /* BLActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B54A02769A2DE00949A74 /* BLActivity.swift */; };
+		051B54A5276A61C500949A74 /* BLActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B54A4276A61C400949A74 /* BLActivityController.swift */; };
+		051B54AA276AFA9700949A74 /* SmallActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051B54A8276AFA9600949A74 /* SmallActivityCollectionViewCell.xib */; };
+		051B54AF276AFCF200949A74 /* SmallActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B54AE276AFCF200949A74 /* SmallActivityCollectionViewCell.swift */; };
 		052FCD75275E724000530E4C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052FCD74275E724000530E4C /* Colors.xcassets */; };
 		052FCD79275E7A0D00530E4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD78275E7A0D00530E4C /* LoginViewController.swift */; };
 		052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */; };
@@ -69,6 +77,14 @@
 		05181EB4275DB3D500BD5BB5 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		051A77EC275E9E5A00445FEB /* PhotoPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoPicker.storyboard; sourceTree = "<group>"; };
 		051A77EF275EA09700445FEB /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		051B5494276970D300949A74 /* Expedition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expedition.xcdatamodel; sourceTree = "<group>"; };
+		051B5497276973D200949A74 /* BLCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLCity.swift; sourceTree = "<group>"; };
+		051B549A276974EB00949A74 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		051B549D276975FF00949A74 /* BLCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLCityController.swift; sourceTree = "<group>"; };
+		051B54A02769A2DE00949A74 /* BLActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLActivity.swift; sourceTree = "<group>"; };
+		051B54A4276A61C400949A74 /* BLActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLActivityController.swift; sourceTree = "<group>"; };
+		051B54A8276AFA9600949A74 /* SmallActivityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallActivityCollectionViewCell.xib; sourceTree = "<group>"; };
+		051B54AE276AFCF200949A74 /* SmallActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		052FCD74275E724000530E4C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		052FCD78275E7A0D00530E4C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		052FCD7B275E7D6D00530E4C /* CustomColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorExtension.swift; sourceTree = "<group>"; };
@@ -201,6 +217,10 @@
 		056609382756D77000FF845A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				051B5493276970D300949A74 /* Expedition.xcdatamodeld */,
+				051B5497276973D200949A74 /* BLCity.swift */,
+				051B54A02769A2DE00949A74 /* BLActivity.swift */,
+				051B549A276974EB00949A74 /* CoreDataStack.swift */,
 				05A74C22275DBCA70029A990 /* Model Controllers */,
 				056609392756D79900FF845A /* City.swift */,
 				05C0C8822757CFF200DF8675 /* Category.swift */,
@@ -217,6 +237,7 @@
 				05921C3027610FC500FC6EC1 /* CityCollectionViewCell.xib */,
 				05010E912762BE8300D2A3A3 /* CategoryView.xib */,
 				05010E952762CBDE00D2A3A3 /* ActivityCollectionViewCell.xib */,
+				051B54A8276AFA9600949A74 /* SmallActivityCollectionViewCell.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -228,6 +249,7 @@
 				05010E8E2762BE4E00D2A3A3 /* CategoryView.swift */,
 				05010E9E2762D7DD00D2A3A3 /* ActivityCollectionViewCell.swift */,
 				05143D932766AEDC0032BBD0 /* PhotoGalleryCollectionViewCell.swift */,
+				051B54AE276AFCF200949A74 /* SmallActivityCollectionViewCell.swift */,
 			);
 			path = "Custom Views Controllers";
 			sourceTree = "<group>";
@@ -239,6 +261,8 @@
 				05921C522761768A00FC6EC1 /* CityController.swift */,
 				05010EA127631F0400D2A3A3 /* CategoryController.swift */,
 				05C64E012763EE55001B1E9A /* ActivityController.swift */,
+				051B549D276975FF00949A74 /* BLCityController.swift */,
+				051B54A4276A61C400949A74 /* BLActivityController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -324,6 +348,7 @@
 				056609282756D5F400FF845A /* Assets.xcassets in Resources */,
 				05143D912766AA8D0032BBD0 /* ActivityPhotoGallery.storyboard in Resources */,
 				056609262756D5E200FF845A /* Authentication.storyboard in Resources */,
+				051B54AA276AFA9700949A74 /* SmallActivityCollectionViewCell.xib in Resources */,
 				05010E972762CBDE00D2A3A3 /* ActivityCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +366,11 @@
 				05181EB5275DB3D500BD5BB5 /* Strings.swift in Sources */,
 				05C64E022763EE55001B1E9A /* ActivityController.swift in Sources */,
 				05A74C29275DC4440029A990 /* CloudKitManager.swift in Sources */,
+				051B54A12769A2DE00949A74 /* BLActivity.swift in Sources */,
+				051B54A5276A61C500949A74 /* BLActivityController.swift in Sources */,
 				05010E9B2762D5B700D2A3A3 /* ActivityListViewController.swift in Sources */,
 				05C64DFF2763AD46001B1E9A /* CategoryType.swift in Sources */,
+				051B5495276970D300949A74 /* Expedition.xcdatamodeld in Sources */,
 				05921C5A276189BA00FC6EC1 /* ErrorAlert.swift in Sources */,
 				05143D8E27668E320032BBD0 /* ActivityMapPin.swift in Sources */,
 				05921C50276169E500FC6EC1 /* CityDetailViewController.swift in Sources */,
@@ -353,18 +381,22 @@
 				051A77F0275EA09700445FEB /* PhotoPickerViewController.swift in Sources */,
 				05921C38276117A000FC6EC1 /* CityCollectionViewCell.swift in Sources */,
 				05921C3F27611F3300FC6EC1 /* CityListViewController.swift in Sources */,
+				051B5498276973D200949A74 /* BLCity.swift in Sources */,
 				05921C532761768A00FC6EC1 /* CityController.swift in Sources */,
 				0566091F2756D5E100FF845A /* AppDelegate.swift in Sources */,
 				05010E9F2762D7DD00D2A3A3 /* ActivityCollectionViewCell.swift in Sources */,
 				0566093A2756D79900FF845A /* City.swift in Sources */,
 				05143D972766B0C90032BBD0 /* PhotoGalleryViewController.swift in Sources */,
+				051B54AF276AFCF200949A74 /* SmallActivityCollectionViewCell.swift in Sources */,
 				05143D942766AEDC0032BBD0 /* PhotoGalleryCollectionViewCell.swift in Sources */,
 				05010E8F2762BE4E00D2A3A3 /* CategoryView.swift in Sources */,
 				052FCD7C275E7D6D00530E4C /* CustomColorExtension.swift in Sources */,
 				056609212756D5E100FF845A /* SceneDelegate.swift in Sources */,
+				051B549B276974EB00949A74 /* CoreDataStack.swift in Sources */,
 				05921C572761820800FC6EC1 /* NetworkError.swift in Sources */,
 				052FCD79275E7A0D00530E4C /* LoginViewController.swift in Sources */,
 				05C64E0C27659D48001B1E9A /* DurationFormater.swift in Sources */,
+				051B549E276975FF00949A74 /* BLCityController.swift in Sources */,
 				05181EB1275D7F4900BD5BB5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +605,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		051B5493276970D300949A74 /* Expedition.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				051B5494276970D300949A74 /* Expedition.xcdatamodel */,
+			);
+			currentVersion = 051B5494276970D300949A74 /* Expedition.xcdatamodel */;
+			path = Expedition.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 056609132756D5E100FF845A /* Project object */;
 }

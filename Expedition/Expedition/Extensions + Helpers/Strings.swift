@@ -24,4 +24,10 @@ struct Strings {
     static let authNavigationController = "authenticationNavigationController"
     static let mainTabBarController = "mainTabBarController"
     static let UDSavedUserEmailKey = "userEmail"
+    
+    //MARK: - Icons
+    static let heartFull = "heart.fill"
+    static let heartEmpty = "heart"
+    static let bookmarkFull = "bookmark.fill"
+    static let bookmarkEmpty = "bookmark"
 }
