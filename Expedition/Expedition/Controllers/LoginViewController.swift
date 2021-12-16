@@ -79,13 +79,6 @@ class LoginViewController: UIViewController {
         })
     }
     
-    func presentExploreViewController() {
-        DispatchQueue.main.async {
-            guard let exploreVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else { return }
-            self.present(exploreVC, animated: true, completion: nil)
-        }
-    }
-    
     //MARK: - IBActions
     
     @IBAction func loginFormButtonTapped(_ sender: Any) {

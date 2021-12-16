@@ -80,7 +80,7 @@ class ActivityDetailViewController: UIViewController {
         ActivityPriceLbl.text = "$ \(activity.retailPrice.value)"
         activityRatingLbl.text = "\(activity.rating)"
         activityDescriptionLbl.text = activity.about
-        activityCoverImageView.image = activity.coverImage ?? UIImage(systemName: "star.fill")
+        activityCoverImageView.image = activity.coverImage ?? UIImage(systemName: "expeditionLogo")
         if let duration = activity.duration?.max {
             activityDurationLbl.text = formatDuration(duration: duration)
         }else{
@@ -157,6 +157,7 @@ class ActivityDetailViewController: UIViewController {
     //MARK: - IBOutlets
     
     @IBAction func saveToBucketListButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

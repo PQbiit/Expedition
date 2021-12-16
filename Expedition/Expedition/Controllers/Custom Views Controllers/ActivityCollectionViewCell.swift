@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ActivityCollectionViewCellDelegate: class {
+    func updateBucketListStatus(activity: Activity, favoriteStatus: Bool)
+}
+
 class ActivityCollectionViewCell: UICollectionViewCell {
     
     //MARK: - IBOutlets
@@ -26,20 +30,20 @@ class ActivityCollectionViewCell: UICollectionViewCell {
             setupViews()
         }
     }
-    
-    //MARK: - Life Cycle Methods
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    var isFavorite: Bool = false
+    weak var delegate: ActivityCollectionViewCellDelegate?
     
     //MARK: - Helper Methods
     
     func setupViews() {
         guard let activity = activity else { return }
         setUpViewDesign()
-        
+        isFavorite = BLActivityController.shared.isFavoriteActivity(activity: activity)
+        if isFavorite {
+            bucketListButton.setImage(UIImage(systemName: Strings.bookmarkFull), for: .normal)
+        }else{
+            bucketListButton.setImage(UIImage(systemName: Strings.bookmarkEmpty), for: .normal)
+        }
         activityPriceLbl.text = "$\(activity.retailPrice.value)"
         activityTitleLbl.text = activity.title
         activityDescriptionLbl.text = activity.description
@@ -66,6 +70,9 @@ class ActivityCollectionViewCell: UICollectionViewCell {
     //MARK: - IBActions
     
     @IBAction func bucketListButtonTapped(_ sender: Any) {
+        guard let activity = activity else { return }
+        isFavorite = !isFavorite
+        delegate?.updateBucketListStatus(activity: activity, favoriteStatus: isFavorite)
     }
     
 }

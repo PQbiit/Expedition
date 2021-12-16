@@ -5,7 +5,7 @@
 //  Created by Luis Alfonso Arriaga Quezada on 30/11/21.
 //
 
-import Foundation
+import UIKit
 
 struct City: Codable{
     let id: Int
@@ -15,7 +15,8 @@ struct City: Codable{
     let longitude: Double
     let coverImageURL: String
     let country: Country
-
+    var coverImage: UIImage?
+    
     struct Country: Codable {
         let name: String
         let code: String

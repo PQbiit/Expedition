@@ -28,6 +28,23 @@ struct Activity: Codable {
     let serviceFee: ServiceFee
     let duration: Duration?
     let rating: Double
+    let city: City
+    
+    struct City: Codable {
+        let id: Int
+        let name: String
+        let country: Country
+        
+        struct Country: Codable {
+            let name : String
+            let code: String
+            
+            enum CodingKeys: String, CodingKey {
+                case name
+                case code = "iso_code"
+            }
+        }
+    }
     
     struct RetailPrice: Codable {
         let currency: String
@@ -57,6 +74,7 @@ struct Activity: Codable {
         case serviceFee = "service_fee"
         case rating = "reviews_avg"
         case duration = "duration_range"
+        case city
     }
     
     var coverImage: UIImage?
