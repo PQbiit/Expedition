@@ -29,7 +29,7 @@
                                 <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expeditionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-f8-Xt2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_green" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-f8-Xt2">
                                 <rect key="frame" x="20" y="223" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gcV-f8-Xt2" secondAttribute="height" multiplier="1:1" id="B4b-sZ-2eU"/>
@@ -243,7 +243,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="expeditionLogo" width="1200" height="900"/>
+        <image name="icon_green" width="272" height="272"/>
         <namedColor name="Lapis Blue">
             <color red="0.16470588235294117" green="0.3843137254901961" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
