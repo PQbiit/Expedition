@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Expedition wants to use your camera for taking your profile picture</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Expedition wants to access your photo library so you can select a profile picture</string>
 </dict>
 </plist>

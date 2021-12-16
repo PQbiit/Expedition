@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {[weak self] in
             self?.titleLabel.text = "Log in"
             self?.photoContainerView.isHidden = true
-            self?.loginFormButton.tintColor = UIColor.lapisBlue
+            self?.loginFormButton.tintColor = UIColor.hunterGreen
             self?.loginFormButton.alpha = 1.0
             self?.signUpFormButton.tintColor = UIColor.textColor
             self?.signUpFormButton.alpha = 0.3
@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
             self?.photoContainerView.isHidden = false
             self?.loginFormButton.tintColor = UIColor.textColor
             self?.loginFormButton.alpha = 0.3
-            self?.signUpFormButton.tintColor = UIColor.lapisBlue
+            self?.signUpFormButton.tintColor = UIColor.hunterGreen
             self?.signUpFormButton.alpha = 1.0
             self?.fNameTextField.isHidden = false
             self?.mNameTextField.isHidden = false

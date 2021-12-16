@@ -40,7 +40,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-Yo-nMm">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
-                                        <color key="backgroundColor" name="Lapis Blue"/>
+                                        <color key="backgroundColor" name="Hunter Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="SEq-f0-viQ"/>
                                         </constraints>
@@ -162,7 +162,7 @@
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2R-sM-hgo">
                                 <rect key="frame" x="20" y="629.5" width="374" height="33"/>
-                                <color key="backgroundColor" name="Lapis Blue"/>
+                                <color key="backgroundColor" name="Hunter Green"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Log in"/>
@@ -244,6 +244,9 @@
     </scenes>
     <resources>
         <image name="icon_green" width="272" height="272"/>
+        <namedColor name="Hunter Green">
+            <color red="0.2627450980392157" green="0.39215686274509803" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Lapis Blue">
             <color red="0.16470588235294117" green="0.3843137254901961" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
