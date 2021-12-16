@@ -29,14 +29,11 @@
                                 <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_green" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-f8-Xt2">
-                                <rect key="frame" x="20" y="223" width="374" height="374"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gcV-f8-Xt2" secondAttribute="height" multiplier="1:1" id="B4b-sZ-2eU"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_green" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-f8-Xt2">
+                                <rect key="frame" x="20" y="223" width="374" height="272"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dm9-Ce-OF5">
-                                <rect key="frame" x="20" y="617" width="374" height="40"/>
+                                <rect key="frame" x="20" y="515" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-Yo-nMm">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
